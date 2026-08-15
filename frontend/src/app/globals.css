@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0b0f19;
+  --color-foreground: #f3f4f6;
+  
+  --color-sidebar: #111827;
+  --color-card: rgba(31, 41, 55, 0.7);
+  --color-border: rgba(255,255,255,0.1);
+  
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  
+  --color-success: #10b981;
+  --color-error: #ef4444;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(17, 24, 39, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-200 border-none cursor-pointer;
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)];
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 text-white hover:bg-white/20;
+  }
+  
+  .input-field {
+    @apply w-full p-3 bg-black/20 border border-[var(--color-border)] rounded-lg text-white focus:outline-none focus:border-[var(--color-primary)];
+  }
+}
